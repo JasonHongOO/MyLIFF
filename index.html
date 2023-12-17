@@ -27,12 +27,15 @@
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script>
 		async function sendShare_Gift() {
+			console.log("sendShare_Gift Btn Is Pressed");
+
 			name = await liff.getProfile().then((profile) => {
 				return profile.displayName;
 			}).catch((err) => {
 				return err;
 			});
 
+			console.log("sendShare_Gift Is Send");
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
